@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="ladoEsquerdo">
+
+            <h1>Calculadora de Juros</h1>
+
+            <p>
+                Juros são a remuneração pelo uso do dinheiro ao longo do tempo.
+                Na prática, funcionam como um “aluguel”.
+            </p>
+
+            <p>
+                Quando você empresta ou investe dinheiro,
+                recebe juros. Quando pega empréstimo,
+                paga juros.
+            </p>
+
+            <a href="saibamais.html"target="_blank"class="btnSaibaMais">Saiba mais sobre os juros simples e compostos</a>
+
+        </div>
+
+        <div class="ladoDireito">
+
+            <form onsubmit="event.preventDefault(); calcular();">
+
+                <h2>Calcule seus juros</h2>
+
+                <label for="capital">Capital Inicial (R$):</label>
+
+                <input
+                type="number"
+                id="capital"
+                step="0.01"
+                required>
+
+                <br><br>
+
+                <label for="taxa">Taxa de Juros (% ao mês):</label>
+
+                <input
+                type="number"
+                id="taxa"
+                step="0.1"
+                required>
+
+                <br><br>
+
+                <label for="tempo">
+
+                    Tempo (Meses):
+
+                </label>
+
+                <input
+                type="number"
+                id="tempo"
+                required>
+
+                <br><br>
+
+                <div id="campoAporte">
+
+                    <label for="aporte">
+
+                        Aporte Mensal (R$):
+
+                    </label>
+
+                    <input
+                    type="number"
+                    id="aporte">
+
+                    <br><br>
+
+                </div>
+
+                <label for="tipoJuros">
+
+                    Tipo de Juros:
+
+                </label>
+
+                <select
+                id="tipoJuros"
+                required
+                onchange="mostrarAporte()">
+
+                    <option value="simples">Juros Simples</option>
+
+                    <option value="composto">Juros Compostos</option>
+
+                </select>
+
+                <br><br>
+
+                <button type="submit">Calcular</button>
+
+                <button type="button" onclick="limparCampos()">Limpar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- resultado em card -->
+
+    <div id="cardResultado">
+        <div id="conteudoResultado">
+            <h2>Resultado</h2>
+            <p id="textoResultado"></p>
+            <button onclick="fecharResultado()">Fechar</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2026 Calculadora de Juros. Todos os direitos reservados. Lucas Barros</p>
+    </footer>
+
+</body>
+</html>
